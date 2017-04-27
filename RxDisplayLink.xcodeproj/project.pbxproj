@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		C70F784D1EB17FF600764982 /* RxDisplayLink.h in Headers */ = {isa = PBXBuildFile; fileRef = C70F784B1EB17FF600764982 /* RxDisplayLink.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C70F78541EB1801F00764982 /* RxDisplayLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70F78531EB1801F00764982 /* RxDisplayLink.swift */; };
+		C70F78991EB1920D00764982 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C70F78981EB1920D00764982 /* RxSwift.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -16,6 +17,7 @@
 		C70F784B1EB17FF600764982 /* RxDisplayLink.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RxDisplayLink.h; sourceTree = "<group>"; };
 		C70F784C1EB17FF600764982 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C70F78531EB1801F00764982 /* RxDisplayLink.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxDisplayLink.swift; sourceTree = "<group>"; };
+		C70F78981EB1920D00764982 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = "Carthage/Checkouts/RxSwift/build/Debug-iphoneos/RxSwift.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -23,6 +25,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C70F78991EB1920D00764982 /* RxSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -34,6 +37,7 @@
 			children = (
 				C70F784A1EB17FF600764982 /* RxDisplayLink */,
 				C70F78491EB17FF600764982 /* Products */,
+				C70F78971EB1920D00764982 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -53,6 +57,14 @@
 				C70F78531EB1801F00764982 /* RxDisplayLink.swift */,
 			);
 			path = RxDisplayLink;
+			sourceTree = "<group>";
+		};
+		C70F78971EB1920D00764982 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C70F78981EB1920D00764982 /* RxSwift.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -301,6 +313,7 @@
 				C70F78521EB17FF600764982 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
