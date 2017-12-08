@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "RxDisplayLink"
-  s.version      = "0.1.0"
+  s.version      = "1.0.0"
   s.summary      = "RxDisplayLink reactive wrapper for CADisplayLink"
   s.homepage     = "https://github.com/KyoheiG3/RxDisplayLink"
   s.license      = { :type => "MIT", :file => "LICENSE" }
@@ -11,5 +11,5 @@ Pod::Spec.new do |s|
   s.source_files = "RxDisplayLink/**/*.{h,swift}"
   s.requires_arc = true
   s.frameworks   = "Foundation"
-  s.dependency "RxSwift", "~> 3.4.0"
+  s.dependency "RxSwift", "~> 4.0.0"
 end
