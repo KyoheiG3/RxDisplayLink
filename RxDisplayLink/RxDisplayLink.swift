@@ -9,7 +9,7 @@
 import RxSwift
 
 extension CADisplayLink {
-    fileprivate static let maximumFps = 60
+    public static let maximumFps = 60
 }
 
 public extension Reactive where Base: CADisplayLink {
