@@ -11,5 +11,5 @@ Pod::Spec.new do |s|
   s.source_files = "RxDisplayLink/**/*.{h,swift}"
   s.requires_arc = true
   s.frameworks   = "Foundation"
-  s.dependency "RxSwift", "~> 4.0.0"
+  s.dependency "RxSwift", "~> 4.0"
 end
