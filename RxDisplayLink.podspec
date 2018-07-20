@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "RxDisplayLink"
-  s.version      = "1.0.0"
+  s.version      = "1.0.1"
   s.summary      = "RxDisplayLink reactive wrapper for CADisplayLink"
   s.homepage     = "https://github.com/KyoheiG3/RxDisplayLink"
   s.license      = { :type => "MIT", :file => "LICENSE" }
