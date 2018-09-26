@@ -25,6 +25,10 @@ CADisplayLink.rx.link(to: .current, forMode: .defaultRunLoopMode, fps: 30)
 RxDisplayLink(to: .current, forMode: .defaultRunLoopMode, fps: 30)
 ```
 
+## Requirements
+
+- Swift 4.2
+
 ## How to Install RxDisplayLink
 
 #### CocoaPods
@@ -35,7 +39,6 @@ Add the following to your `Podfile`:
 pod "RxDisplayLink"
 use_frameworks!
 ```
-Note: the `use_frameworks!` is required for pods made in Swift.
 
 #### Carthage
 
@@ -44,6 +47,15 @@ Add the following to your `Cartfile`:
 ```Ruby
 github "KyoheiG3/RxDisplayLink"
 ```
+
+## Author
+
+#### Kyohei Ito
+
+- [GitHub](https://github.com/kyoheig3)
+- [Twitter](https://twitter.com/kyoheig3)
+
+Follow me 🎉
 
 ## LICENSE
 
