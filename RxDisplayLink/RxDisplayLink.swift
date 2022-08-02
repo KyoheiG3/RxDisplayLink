@@ -7,6 +7,7 @@
 //
 
 import RxSwift
+import QuartzCore
 
 extension CADisplayLink {
     public static let maximumFps = 60
@@ -20,20 +21,21 @@ public extension Reactive where Base: CADisplayLink {
      - Parameter fps: Frames per second. Default and max are 60.
      - Returns: Observable of CADisplayLink.
      */
-    public static func link(to runloop: RunLoop = .main, forMode mode: RunLoop.Mode = .common, fps: Int = Base.maximumFps) -> Observable<CADisplayLink> {
+    static func link(to runloop: RunLoop = .main, forMode mode: RunLoop.Mode = .common, fps: Int = Base.maximumFps) -> Observable<CADisplayLink> {
         return RxDisplayLink(to: runloop, forMode: mode, fps: fps).asObservable()
     }
 }
 
 public final class RxDisplayLink: ObservableType {
-    public typealias E = CADisplayLink
+  
+    public typealias Element = CADisplayLink
     
     private let runloop: RunLoop
     private let mode: RunLoop.Mode
     private let fps: Int
-    private var observer: AnyObserver<E>?
+    private var observer: AnyObserver<Element>?
     
-    @objc dynamic private func displayLinkHandler(link: E) {
+    @objc dynamic private func displayLinkHandler(link: Element) {
         observer?.onNext(link)
     }
     
@@ -43,16 +45,16 @@ public final class RxDisplayLink: ObservableType {
         self.fps = fps
     }
     
-    public func subscribe<O: ObserverType>(_ observer: O) -> Disposable where O.E == E {
-        var displayLink: E? = E(target: self, selector: #selector(displayLinkHandler))
+    public func subscribe<O: ObserverType>(_ observer: O) -> Disposable where O.Element == Element {
+        var displayLink: Element? = Element(target: self, selector: #selector(displayLinkHandler))
         displayLink?.add(to: runloop, forMode: mode)
         if #available(iOS 10.0, tvOS 10.0, *) {
             displayLink?.preferredFramesPerSecond = fps
         } else {
-            displayLink?.frameInterval = max(E.maximumFps / fps, 1)
+            displayLink?.frameInterval = max(Element.maximumFps / fps, 1)
         }
         
-        self.observer = AnyObserver<E>(observer)
+        self.observer = AnyObserver<Element>(observer)
         
         return Disposables.create {
             self.observer = nil
